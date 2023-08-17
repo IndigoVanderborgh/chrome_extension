@@ -1,8 +1,8 @@
 // Log out "Button clicked!" when the user clicks the "SAVE INPUT" button
 
-function saveLead() {
-    console.log("Button Clicked")
-}
+// function saveLead() {
+//     console.log("Button Clicked")
+// }
 
 
 // Time to learn listeners! When the user clicks the button we want it to listen for that
