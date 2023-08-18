@@ -23,3 +23,6 @@ inputBtn.addEventListener("click", function() {
 // element to the variable stated in line 15.
 
 // Lets setup the infrastructure: an array and inupt variable
+
+let myLeads = []
+let inputEl = document.getElementById("input-el")
