@@ -21,3 +21,5 @@ inputBtn.addEventListener("click", function() {
 // in html we have id="input-btn". on line 15, we connect html's "input-btn" to inputBtn in JS
 // the element is used on line 17, where the first thing is inputBtn, connecting the 
 // element to the variable stated in line 15.
+
+// Lets setup the infrastructure: an array and inupt variable
