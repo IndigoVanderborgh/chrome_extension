@@ -1,6 +1,6 @@
 let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
-let inputEl = document.getElementById("input-el")
-let inputBtn = document.getElementById("input-btn")
+const inputEl = document.getElementById("input-el")
+const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-El")
 
 
@@ -10,7 +10,8 @@ inputBtn.addEventListener("click", function() {
     console.log(myLeads)
 })
 
-// Log out the items in the myLeads array using a for loop 
+// Replace .textContent with .innerHTML and use <li> tags
 for (let i = 0; i < myLeads.length; i++) {
-    console.log(myLeads[i])
+    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
 }
+
