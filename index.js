@@ -17,10 +17,21 @@ let inputBtn = document.getElementById("input-btn")
 
 // Push the value "www.awesomelead.com" to myArray when the input button is clicked
 
+// inputBtn.addEventListener("click", function() {
+//     // Push the value from the inputEl into the myLeads array 
+//     // instead of the hard-coded "www.awesomeleads.com" value
+//     // Google -> "get value from input field javascript"
+//     myLeads.push("www.awesomelead.com")
+//     console.log("Button clicked from addEventListener")
+// })
+
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push("www.awesomelead.com")
-    console.log("Button clicked from addEventListener")
+    // Push the value from the inputEl into the myLeads array 
+    // instead of the hard-coded "www.awesomeleads.com" value
+    // Google -> "get value from input field javascript"
+    myLeads.push(inputEl.value)
+    console.log(myLeads)
 })
 
 // in html we have id="input-btn". on line 15, we connect html's "input-btn" to inputBtn in JS
