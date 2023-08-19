@@ -14,7 +14,12 @@
 
 let inputBtn = document.getElementById("input-btn")
 
+
+// Push the value "www.awesomelead.com" to myArray when the input button is clicked
+
+
 inputBtn.addEventListener("click", function() {
+    myLeads.push("www.awesomelead.com")
     console.log("Button clicked from addEventListener")
 })
 
@@ -22,7 +27,7 @@ inputBtn.addEventListener("click", function() {
 // the element is used on line 17, where the first thing is inputBtn, connecting the 
 // element to the variable stated in line 15.
 
-// Lets setup the infrastructure: an array and inupt variable
+// Lets setup the infrastructure: an array and input variable
 
 let myLeads = []
 let inputEl = document.getElementById("input-el")
