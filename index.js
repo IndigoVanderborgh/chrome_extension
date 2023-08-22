@@ -7,14 +7,18 @@ inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     console.log(myLeads)
     inputEl.value = ""
+    // Save the myLeads array to localStorage 
+    // PS: remember JSON.stringify()
+    
     renderLeads()
+    
+    // To verify that it works:
+    console.log( localStorage.getItem("myLeads") )
 })
 
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
-        // Wrap the lead in an anchor tag (<a>) inside the <li>
-        // Can you make the link open in a new tab?
         listItems += `
             <li>
                 <a target='_blank' href='${myLeads[i]}'>
