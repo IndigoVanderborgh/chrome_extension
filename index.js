@@ -3,6 +3,7 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-El")
 
+// localStorage.setItem("myLead", "www.examplelead.com")
 
 
 inputBtn.addEventListener("click", function() {
