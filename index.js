@@ -6,13 +6,12 @@ const ulEl = document.getElementById("ul-El")
 let deleteBtn = getElementById("")
 let leadsFromLocalStorage = JSON.parse (localStorage.getItem("myLeads"))
 
-
-
-
 if (leadsFromLocalStorage) {
     leadsFromLocalStorage = myLeads
     renderLeads()
 }
+
+// refactor the function below!
 
 function renderLeads() {
     let listItems = ""
