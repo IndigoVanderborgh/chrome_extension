@@ -15,7 +15,10 @@ if (leadsFromLocalStorage) {
 }
 
 // 2. Listen for double clicks on the delete button (google it!)
-deleteBtn.addEventListener
+deleteBtn.addEventListener("click", function() {
+
+}
+)
 
 // 3. When clicked, clear localStorage, myLeads, and the DOM
 
