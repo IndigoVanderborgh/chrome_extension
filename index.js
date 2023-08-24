@@ -1,25 +1,23 @@
 let myLeads = []
+let oldLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
-const ulEl = document.getElementById("ul-El")
-// 1. Store the delete button in a deleteBtn variable
-let deleteBtn = getElementById("")
-let leadsFromLocalStorage = JSON.parse (localStorage.getItem("myLeads"))
+const ulEl = document.getElementById("ul-el")
+const deleteBtn = document.getElementById("delete-btn")
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 if (leadsFromLocalStorage) {
-    leadsFromLocalStorage = myLeads
-    renderLeads()
+    myLeads = leadsFromLocalStorage
+    render(myLeads)
 }
 
-// refactor the function below!
-
-function renderLeads() {
+function render(leads) {
     let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
                 </a>
             </li>
         `
@@ -27,39 +25,17 @@ function renderLeads() {
     ulEl.innerHTML = listItems
 }
 
-deleteBtn.addEventListener("dblcick", function() {
-    console.log("Double clicked!")
+deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
     myLeads = []
-    renderLeads()
-}
-)
-
+    render(myLeads)
+})
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    console.log(myLeads)
     inputEl.value = ""
-    // Save the myLeads array to localStorage 
-    // PS: remember JSON.stringify()
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLeads()
-    
-    // To verify that it works:
-    console.log( localStorage.getItem("myLeads") )
+    render(myLeads)
 })
 
-function renderLeads() {
-    let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
-        listItems += `
-            <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
-                </a>
-            </li>
-        `
-    }
-    ulEl.innerHTML = listItems
-}
 
