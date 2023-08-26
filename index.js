@@ -4,7 +4,6 @@ const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
-// 1. Grab the SAVE TAB button and store it in a tabBtn variable
 const tabsBtn = document.getElementById("tab-btn")
 
 if (leadsFromLocalStorage) {
@@ -14,7 +13,7 @@ if (leadsFromLocalStorage) {
 
 tabBtn.addEventListener("click", function() {
 // Grab the URL of the current tab via third party source
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs)){
+    chrome.tabs.query({active: true, currentWindow: true}), function(tabs) {
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads", JSON.stringify(myLeads))
         render(myleads)
