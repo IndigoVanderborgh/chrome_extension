@@ -7,10 +7,6 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 // 1. Grab the SAVE TAB button and store it in a tabBtn variable
 const tabsBtn = document.getElementById("tab-btn")
 
-const tabs = [
-    {url: "https://www.linkedin.com/in/indigovanderborgh/"}
-]
-
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     render(myLeads)
@@ -18,22 +14,11 @@ if (leadsFromLocalStorage) {
 
 tabBtn.addEventListener("click", function() {
 // Grab the URL of the current tab via third party source
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        // since only one tab should be active and in the current window at once
-        // the return variable should only have one entry
-        let activeTab = tabs[0]
-        let activeTabId = activeTab.id // or do whatever you need
-    })
-
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs)) {
-        console.log(tabs)
-        
-
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs)){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myleads)
     }
-
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    render(myleads)
 })
 
 function render(leads) {
