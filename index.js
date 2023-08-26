@@ -17,13 +17,20 @@ if (leadsFromLocalStorage) {
 }
 
 tabBtn.addEventListener("click", function() {
-// Grab the URL of the current tab!
+// Grab the URL of the current tab via third party source
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    // since only one tab should be active and in the current window at once
-    // the return variable should only have one entry
+        // since only one tab should be active and in the current window at once
+        // the return variable should only have one entry
         let activeTab = tabs[0]
         let activeTabId = activeTab.id // or do whatever you need
-    });
+    })
+
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs)) {
+        console.log(tabs)
+        
+
+    }
+
     myLeads.push(tabs[0].url)
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     render(myleads)
