@@ -48,3 +48,14 @@ inputBtn.addEventListener("click", function() {
 })
 
 
+// recap of this project:
+
+// const
+// addEventListener()
+// innerHTML
+// input.value
+// function parameters
+// template strings
+// localStorage
+// JSON object
+// objects in arrays
